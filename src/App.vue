@@ -1,27 +1,29 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Bullet Journal Template"/>
+    <Title msg="Bullet Journal Template"/>
+    <DateSelector />
+    <br /><br /><hr /><br /><br />
+    <Tags logType='Weekly Log' month='January' :year=2020 />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Title from './components/Title.vue';
+import DateSelector from './components/DateSelector.vue';
+import Tags from './components/Tags.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Title,
+    DateSelector,
+    Tags
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Helvetica Neue';
 }
 </style>
