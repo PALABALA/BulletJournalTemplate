@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Local Date (mm/dd/yyyy):</p>
-    <DatePicker :value="date"></DatePicker>
+    <DatePicker :value='date' @selected='onDateSelected' ></DatePicker>
   </div>
 </template>
 
@@ -10,18 +10,16 @@ import DatePicker from 'vuejs-datepicker';
 
 export default {
   name: 'DateSelector',
-  data() {
-    return {
-      date: new Date()
-    };
+  props: {
+    date: Date
+  },
+  methods: {
+    onDateSelected(newDate) {
+      this.$emit('dateChanged', newDate);
+    }
   },
   components: {
     DatePicker,
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
