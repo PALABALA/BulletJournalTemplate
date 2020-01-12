@@ -26,7 +26,7 @@ jobs:
       env:
         CI: true
     - name: lint
-        run: |
-          npm run lint
-        env:
-          CI: true
+      run: |
+        npm run lint
+      env:
+        CI: true
